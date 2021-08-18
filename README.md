@@ -15,6 +15,5 @@
 - Styled Component
 
 ## 역할분담
-- 소미: main, nav, calendar
-- 수정: board, task
-- modal
+- 소미: main, nav, calendar, modal
+- 수정: board, task, social-login
