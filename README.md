@@ -1,5 +1,4 @@
 # 프로젝트 연월일
-## Somi & Soojeong의 toy Project 🧸
 - 트렐로를 모티브로 한 코딩 프로젝트
 
 ## Goal
