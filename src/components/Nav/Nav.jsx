@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import NavBtn from "../NavBtn/NavBtn";
+<<<<<<< HEAD
 import SideBar from "./SideBar";
+=======
+>>>>>>> e2272f6b18c21cf912e15b8878e764615ce214eb
 
 function Nav() {
   return (
@@ -30,7 +33,10 @@ function Nav() {
           </BtnBundle>
         </Container>
       </NavContainer>
+<<<<<<< HEAD
       <SideBar />
+=======
+>>>>>>> e2272f6b18c21cf912e15b8878e764615ce214eb
     </>
   );
 }
