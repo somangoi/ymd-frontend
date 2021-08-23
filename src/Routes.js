@@ -4,8 +4,10 @@ import Main from "../src/pages/Main";
 import Board from "../src/pages/Board";
 import Task from "../src/pages/Task";
 import Calendar from "../src/pages/Calendar";
+import Signin from './pages/Singin';
 
 import Nav from "./components/Nav/Nav";
+
 
 class Routes extends Component {
   render() {
@@ -17,6 +19,7 @@ class Routes extends Component {
           <Route exact path="/board" component={Board} />
           <Route exact path="/task" component={Task} />
           <Route exact path="/calendar" component={Calendar} />
+          <Route exact path="/signin" component={Signin} />
         </Switch>
       </Router>
     );

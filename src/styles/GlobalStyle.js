@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
    }
    button:focus {
       outline: none;
+      cursor: pointer;
    }
 `;
 export default GlobalStyle;
