@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import NavBtn from "../NavBtn/NavBtn";
 import SideBar from "./SideBar";
+import Balloon from "./Balloon";
 
 function Nav() {
   return (
@@ -30,6 +31,8 @@ function Nav() {
           </BtnBundle>
         </Container>
       </NavContainer>
+      <SideBar />
+      <Balloon />
     </>
   );
 }
