@@ -10,12 +10,16 @@ import GlobalStyle from "./styles/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import variables from "./styles/variables";
 
+import { RecoilRoot } from "recoil";
+
 ReactDOM.render(
   <>
-    <GlobalStyle />
-    <ThemeProvider theme={{ ...theme, ...variables }}>
-      <Routes />
-    </ThemeProvider>
+    <RecoilRoot>
+      <GlobalStyle />
+      <ThemeProvider theme={{ ...theme, ...variables }}>
+        <Routes />
+      </ThemeProvider>
+    </RecoilRoot>
   </>,
   document.getElementById("root")
 );
