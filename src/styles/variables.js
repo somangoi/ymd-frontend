@@ -10,6 +10,15 @@ const variables = {
     justify-content: ${justifyContent};
     flex-direction: ${flexDirection};
   `,
+
+  srOnly: `
+    position: absolute;
+    z-index: -100;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+  `
 };
 
 export default variables;
