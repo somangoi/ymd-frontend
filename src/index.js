@@ -12,6 +12,9 @@ import variables from "./styles/variables";
 
 import { RecoilRoot } from "recoil";
 
+// #REACT STRAP
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 ReactDOM.render(
   <>
     <RecoilRoot>
