@@ -1,14 +1,22 @@
-import React, { Fragment } from "react";
+import styled from 'styled-components';
 
 //컴포넌트
-import Example from '../components/TaskTable';
+import TaskTable from '../components/TaskTable';
 import Title from '../components/Title/Title';
 
 function Task() {
-  return <Fragment>
+  return <TaskWrapeer>
     <Title></Title>
-    <Example></Example>
-  </Fragment>;
+    <TaskTable></TaskTable>
+  </TaskWrapeer>;
 }
+
+
+const TaskWrapeer = styled.div`
+  height: 100vh;
+  background-color: ${({ theme }) => theme.colorBackground};
+  padding: 0 30px`;
+
+
 
 export default Task;
