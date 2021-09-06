@@ -9,8 +9,12 @@ import Routes from "./Routes";
 import GlobalStyle from "./styles/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import variables from "./styles/variables";
+import "./styles/index.scss"
 
 import { RecoilRoot } from "recoil";
+
+// #REACT STRAP
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <>
