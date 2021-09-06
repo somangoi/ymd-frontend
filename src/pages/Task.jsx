@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 //컴포넌트
-import TaskTable from '../components/TaskTable';
+import TaskTable from '../components/TaskTable/TaskTable';
 import Title from '../components/Title/Title';
 
 function Task() {
