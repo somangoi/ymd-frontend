@@ -3,79 +3,79 @@ import { Table } from 'reactstrap';
 
 function TaskTable () {
   return (
-    <Table>
+    <Table className="taskPage">
       <thead>
-        <tr className="taskPage">
-          <th className="taskPage"><i className="fas fa-list"/>Task</th>
-          <th className="taskPage"><i className="fas fa-arrow-up"/>Epic</th>
-          <th className="taskPage"><i className="far fa-clock"/>Schedule</th>
-          <th className="taskPage"><i className="fas fa-user"/>Engineers</th>
-          <th className="taskPage"><i className="fab fa-font-awesome-flag"/>By group</th>
+        <tr className="tableBG tHead">
+          <th className="sizeLarge"><i className="fas fa-list tHeadIcon"/>Task</th>
+          <th className="sizeSmall"><i className="fas fa-arrow-up tHeadIcon"/>Epic</th>
+          <th className="sizeMedium"><i className="far fa-clock tHeadIcon"/>Schedule</th>
+          <th className="sizeLarge"><i className="fas fa-user tHeadIcon"/>Engineers</th>
+          <th className="sizeMedium"><i className="fab fa-font-awesome-flag tHeadIcon"/>By group</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
-        <tr>
-          <th scope="row" className="taskPage">사용자 리스트 레이아웃</th>
-          <td className="taskPage">메인페이지</td>
-          <td className="taskPage">2021/09/30 - 2021/10/03</td>
-          <td className="taskPage">@Somi Hwang</td>
-          <td className="taskPage">In progress</td>
+        <tr className="tableBG">
+          <th scope="row">사용자 리스트 레이아웃</th>
+          <td>메인페이지</td>
+          <td>2021/09/30 - 2021/10/03</td>
+          <td>@Somi Hwang</td>
+          <td>In progress</td>
         </tr>
       </tbody>
     </Table>
