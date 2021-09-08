@@ -14,7 +14,11 @@ function Balloon() {
     >
       <BalloonContainer onClick={(e) => e.stopPropagation()}>
         <p>
+<<<<<<< HEAD
           <i class="fas fa-folder-plus"></i>
+=======
+          <i className="fas fa-folder-plus" />
+>>>>>>> 1195139 (WIP)
           <span>새로운 보드 만들기</span>
         </p>
       </BalloonContainer>
