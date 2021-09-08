@@ -1,6 +1,11 @@
 import { atom, useRecoilState, useRecoilValue } from "recoil";
 
-const textState = atom({
-  key: "textState", // unique ID (with respect to other atoms/selectors)
-  default: "", // default value (aka initial value)
+export const sideBarState = atom({
+  key: "isHiddenState",
+  default: true,
+});
+
+export const createNewBoardState = atom({
+  key: "createNewBoardState",
+  default: true,
 });

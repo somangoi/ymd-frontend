@@ -1,8 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import { sideBarState } from "../../atoms/navStates";
+import { useRecoilState } from "recoil";
 
 function Background({ children }) {
-  return <BackgroundBox>{children}</BackgroundBox>;
+  const [isHidden, setIsHidden] = useRecoilState(sideBarState);
+
+  return (
+    <BackgroundBox
+      onClick={() => {
+        setIsHidden(true);
+      }}
+    >
+      {children}
+    </BackgroundBox>
+  );
 }
 
 const BackgroundBox = styled.div`
@@ -13,6 +25,5 @@ const BackgroundBox = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.3);
-  padding-top: 50px;
 `;
 export default Background;
