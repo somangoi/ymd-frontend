@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import Background from "../Modal/Background";
+import { sideBarState } from "../../atoms/navStates";
+import { useRecoilState } from "recoil";
 
 function SideBar() {
   const children = (
-    <SideBarContainer>
+    <SideBarContainer onClick={(e) => e.stopPropagation()}>
       <BoardBox>
         <h2>
           <i class="far fa-clock" />
@@ -19,7 +21,7 @@ function SideBar() {
       </BoardBox>
     </SideBarContainer>
   );
-  return <Background> {children}</Background>;
+  return <Background>{children}</Background>;
 }
 
 const SideBarContainer = styled.div`

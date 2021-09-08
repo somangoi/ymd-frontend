@@ -4,16 +4,15 @@ import Main from "../src/pages/Main";
 import Board from "../src/pages/Board";
 import Task from "../src/pages/Task";
 import Calendar from "../src/pages/Calendar";
-import Signin from './pages/Singin';
+import Signin from "./pages/Singin";
 
 import Nav from "./components/Nav/Nav";
-
 
 class Routes extends Component {
   render() {
     return (
       <Router>
-        {/* <Nav /> */}
+        <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/board" component={Board} />
