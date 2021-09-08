@@ -1,21 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import Background from "../Modal/Background";
-import { sideBarState } from "../../atoms/navStates";
-import { useRecoilState } from "recoil";
 
 function SideBar() {
   const children = (
     <SideBarContainer onClick={(e) => e.stopPropagation()}>
       <BoardBox>
         <h2>
-          <i class="far fa-clock" />
+          <i className="far fa-clock" />
           최근 보드
         </h2>
       </BoardBox>
       <BoardBox>
         <h2>
-          <i class="fas fa-user" />
+          <i className="fas fa-user" />
           전체 보드
         </h2>
       </BoardBox>
