@@ -21,7 +21,7 @@ function Nav() {
               history.push("/");
             }}
           >
-            <i class="far fa-calendar" />
+            <i className="far fa-calendar" />
             <span>연월일</span>
           </div>
         </TitleContainer>
@@ -32,7 +32,7 @@ function Nav() {
               onClick={() => {
                 history.push("/");
               }}
-              label={<i class="fas fa-home" />}
+              label={<i className="fas fa-home" />}
             ></NavBtn>
             <NavBtn
               onClick={() => {
@@ -40,7 +40,7 @@ function Nav() {
               }}
               label={
                 <>
-                  <i class="fab fa-flipboard" /> <span>Boards</span>
+                  <i className="fab fa-flipboard" /> <span>Boards</span>
                 </>
               }
             ></NavBtn>

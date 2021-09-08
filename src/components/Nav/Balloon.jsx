@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { sideBarState, createNewBoardState } from "../../atoms/navStates";
+import { createNewBoardState } from "../../atoms/navStates";
 import { useRecoilState } from "recoil";
 
 function Balloon() {
@@ -14,7 +14,7 @@ function Balloon() {
     >
       <BalloonContainer onClick={(e) => e.stopPropagation()}>
         <p>
-          <i class="fas fa-folder-plus"></i>
+          <i className="fas fa-folder-plus"></i>
           <span>새로운 보드 만들기</span>
         </p>
       </BalloonContainer>
