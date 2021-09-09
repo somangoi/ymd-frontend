@@ -4,7 +4,7 @@ import Main from "../src/pages/Main";
 import Board from "../src/pages/Board";
 import Task from "../src/pages/Task";
 import Calendar from "../src/pages/Calendar";
-import Signin from "./pages/Singin";
+import Signin from './pages/Signin';
 
 import Nav from "./components/Nav/Nav";
 
