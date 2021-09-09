@@ -8,12 +8,11 @@ import Signin from './pages/Signin';
 
 import Nav from "./components/Nav/Nav";
 
-
 class Routes extends Component {
   render() {
     return (
       <Router>
-        {/* <Nav /> */}
+        <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/board" component={Board} />

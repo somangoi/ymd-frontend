@@ -1,0 +1,37 @@
+.taskPage{
+  th, td{
+    border: 1px solid #cccccc;
+  }
+
+  th {
+    border-bottom: none;
+  }
+  .tableBG{
+    background-color: #ffffff;
+  }
+
+  .tHead{
+    color: #878787;
+
+    .sizeLarge{
+      width:25%;
+      overflow: hidden;
+    }
+
+    .sizeSmall{
+      width: 12.5%;
+      overflow: hidden;
+    }
+
+    .sizeMedium{
+      width: 18.75%;
+      overflow: hidden;
+    }
+
+    .tHeadIcon{
+      margin-right: 10px;
+      overflow: hidden;
+    }
+  }
+}
+

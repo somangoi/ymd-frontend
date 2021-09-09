@@ -4,22 +4,22 @@ import Background from "../Modal/Background";
 
 function SideBar() {
   const children = (
-    <SideBarContainer>
+    <SideBarContainer onClick={(e) => e.stopPropagation()}>
       <BoardBox>
         <h2>
-          <i class="far fa-clock" />
+          <i className="far fa-clock" />
           최근 보드
         </h2>
       </BoardBox>
       <BoardBox>
         <h2>
-          <i class="fas fa-user" />
+          <i className="fas fa-user" />
           전체 보드
         </h2>
       </BoardBox>
     </SideBarContainer>
   );
-  return <Background> {children}</Background>;
+  return <Background>{children}</Background>;
 }
 
 const SideBarContainer = styled.div`

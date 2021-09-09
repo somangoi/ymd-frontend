@@ -1,38 +1,69 @@
 import React from "react";
+import { useHistory } from "react-router";
 import styled from "styled-components";
 import NavBtn from "../NavBtn/NavBtn";
 import SideBar from "./SideBar";
 import Balloon from "./Balloon";
+import { sideBarState, createNewBoardState } from "../../atoms/navStates";
+import { useRecoilState } from "recoil";
 
 function Nav() {
+  const history = useHistory();
+  const [isHidden, setIsHidden] = useRecoilState(sideBarState);
+  const [createNew, setCreateNew] = useRecoilState(createNewBoardState);
+
   return (
     <>
       <NavContainer>
         <TitleContainer>
-          <i class="far fa-calendar" />
-          <span>연월일</span>
+          <div
+            onClick={() => {
+              history.push("/");
+            }}
+          >
+            <i className="far fa-calendar" />
+            <span>연월일</span>
+          </div>
         </TitleContainer>
 
         <Container>
           <BtnBundle>
-            <NavBtn label={<i class="fas fa-home" />}></NavBtn>
             <NavBtn
+              onClick={() => {
+                history.push("/");
+              }}
+              label={<i className="fas fa-home" />}
+            ></NavBtn>
+            <NavBtn
+              onClick={() => {
+                setIsHidden(!isHidden);
+              }}
               label={
                 <>
-                  <i class="fab fa-flipboard" /> <span>Boards</span>
+                  <i className="fab fa-flipboard" /> <span>Boards</span>
                 </>
               }
             ></NavBtn>
             <Search placeholder="Search" />
           </BtnBundle>
           <BtnBundle>
-            <NavBtn label={<i class="fas fa-plus"></i>}></NavBtn>
-            <NavBtn label={"Sign in"} />
+            <NavBtn
+              onClick={() => {
+                setCreateNew(!createNew);
+              }}
+              label={<i className="fas fa-plus" />}
+            ></NavBtn>
+            <NavBtn
+              onClick={() => {
+                history.push("/signin");
+              }}
+              label={"Sign in"}
+            />
           </BtnBundle>
         </Container>
+        {!isHidden && <SideBar />}
+        {!createNew && <Balloon />}
       </NavContainer>
-      <SideBar />
-      <Balloon />
     </>
   );
 }
@@ -45,6 +76,7 @@ const NavContainer = styled.div`
   left: 0;
   right: 0;
   background: linear-gradient(0.25turn, #2a5d9b, #498abb);
+  z-index: 999;
 `;
 
 const BtnBundle = styled.div`
@@ -69,6 +101,10 @@ const TitleContainer = styled.div`
   height: 50px;
   color: white;
   /* z-index: 1; */
+
+  div {
+    cursor: pointer;
+  }
 
   span {
     padding-left: 10px;
