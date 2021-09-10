@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState, useRef } from 'react'
 import { useHistory } from 'react-router';
 import styled from 'styled-components'
 
-// import { POST_GOOGLE_API } from '../../../src/config.js';
+import { POST_GOOGLE_API } from '../config';
 
 export default function Signin() {
   const history = useHistory();
@@ -15,7 +15,7 @@ export default function Signin() {
 
 
 //SDK 초기 설정 및 내 API초기화
- const googleSDK = () => {
+  const googleSDK = () => {
     window.googleSDKLoaded = () => {
       console.log(window.gapi);
       window.gapi.load("auth2", () => {
@@ -60,19 +60,19 @@ export default function Signin() {
 
   //fetch
   const GoogleApiPOST = (token) => {
-    // fetch
-    //   .get(`${POST_GOOGLE_API}/signin`, {
-    //     headers: {
-    //       Authorization: token,
-    //       "Content-Type": "application/json",
-    //     },
-    //   })
-    //   .then((res) => {
-    //     sessionStorage.setItem("token", res.data.token);
-    //     alert("로그인 되었습니다");
-    //     history.push("/");
-    //   })
-    //   .catch((error) => alert("Error가 발생하였습니다", error));
+    fetch(`${POST_GOOGLE_API}`, {
+        method: 'POST',
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json",
+        }
+      })
+      .then((res) => {
+        sessionStorage.setItem("token", res.data.token);
+        alert("로그인 되었습니다");
+        history.push("/");
+      })
+      .catch((error) => alert("Error가 발생하였습니다", error));
     console.log('로그인!')
   };
   
@@ -91,6 +91,7 @@ export default function Signin() {
 
 const SigninWrapper = styled.div`
   ${({ theme }) => theme.displayFlex('center', 'center')};
+  margin-top: 50px;
   height: 100vh;
   background-color: ${({ theme }) => theme.colorBackground};
 
