@@ -24,7 +24,9 @@ function Board() {
 }
 
 const BoardWrapper = styled.div`
+  margin-top: 50px;
   height: 100vh;
+  overflow-y:hidden;
   padding: 20px 30px;
   background-color: ${({ theme }) => theme.colorBackground};
 `

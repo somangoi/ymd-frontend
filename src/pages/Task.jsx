@@ -6,16 +6,17 @@ import Title from '../components/Title/Title';
 
 function Task() {
   return <TaskWrapeer>
-    <Title></Title>
+    <Title />
     <TaskTable></TaskTable>
   </TaskWrapeer>;
 }
 
 
 const TaskWrapeer = styled.div`
+  margin-top: 50px;
   height: 100vh;
   background-color: ${({ theme }) => theme.colorBackground};
-  padding: 0 30px`;
+  padding: 20px 30px;`
 
 
 
