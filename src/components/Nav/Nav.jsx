@@ -83,6 +83,7 @@ const BtnBundle = styled.div`
   &:first-child {
     margin-left: 10px;
   }
+
   z-index: 999;
 `;
 
@@ -100,7 +101,6 @@ const TitleContainer = styled.div`
   width: 100%;
   height: 50px;
   color: white;
-  /* z-index: 1; */
 
   div {
     cursor: pointer;
