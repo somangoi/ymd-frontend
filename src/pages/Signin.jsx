@@ -7,17 +7,12 @@ import { POST_GOOGLE_API } from '../config';
 export default function Signin() {
   const history = useHistory();
   const googleLoginBtn = useRef(null);
-  const [token, setToken] = useState("");
-
-  useEffect(() => {
-    googleSDK();
-  }, []);
-
+  const [token, setToken] = useState('');
 
 //SDK 초기 설정 및 내 API초기화
   const googleSDK = () => {
     window.googleSDKLoaded = () => {
-      console.log(window.gapi);
+      // console.log(window.gapi);
       window.gapi.load("auth2", () => {
         const auth2 = window.gapi.auth2.init({
           client_id:
@@ -29,20 +24,34 @@ export default function Signin() {
           googleLoginBtn.current,
           {},
           (googleUser) => {
-            const profile = googleUser.getBasicProfile();
-            console.log(profile);
+            // const profile = googleUser.getBasicProfile();
+            // console.log(profile);
             console.log(`Token || ${googleUser.getAuthResponse().id_token}`);
             setToken(googleUser.getAuthResponse().id_token);
-            console.log(`ID: ${profile.getId()}`);
-            console.log(`Name: ${profile.getName()}`);
-            console.log(`Image URL: ${profile.getImageUrl()}`);
-            console.log(`Email: ${profile.getEmail()}`);
+            console.log('find token>>>>',token);
+            // console.log(`ID: ${profile.getId()}`);
+            // console.log(`Name: ${profile.getName()}`);
+            // console.log(`Image URL: ${profile.getImageUrl()}`);
+            // console.log(`Email: ${profile.getEmail()}`);
           },
           (error) => {
             alert(JSON.stringify(error, undefined, 2));
           }
         );
-      });
+      })
+      fetch(`${POST_GOOGLE_API}`, {
+        method: 'POST',
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json",
+        }
+      })
+      .then((res) => {
+        sessionStorage.setItem("token", res.data.token);
+        alert("로그인 되었습니다");
+        history.push("/");
+      })
+      .catch((error) => console.log("Error가 발생하였습니다", error) );
     };
    //구글 SDK 불러오기
       (function (d, s, id) {
@@ -55,11 +64,7 @@ export default function Signin() {
       js.id = id;
       js.src = "https://apis.google.com/js/platform.js?onload=googleSDKLoaded";
       fjs.parentNode.insertBefore(js, fjs);
-    })(document, "script", "google-jssdk");
-  };
-
-  //fetch
-  const GoogleApiPOST = (token) => {
+    })(document, "script", "google-jssdk")
     fetch(`${POST_GOOGLE_API}`, {
         method: 'POST',
         headers: {
@@ -72,9 +77,25 @@ export default function Signin() {
         alert("로그인 되었습니다");
         history.push("/");
       })
-      .catch((error) => alert("Error가 발생하였습니다", error));
-    console.log('로그인!')
+      .catch((error) => console.log("Error가 발생하였습니다", error) );
   };
+
+  //fetch
+  // const GoogleApiPOST = () => {
+  //   fetch(`${POST_GOOGLE_API}`, {
+  //       method: 'POST',
+  //       headers: {
+  //         Authorization: token,
+  //         "Content-Type": "application/json",
+  //       }
+  //     })
+  //     .then((res) => {
+  //       sessionStorage.setItem("token", res.data.token);
+  //       alert("로그인 되었습니다");
+  //       history.push("/");
+  //     })
+  //     .catch((error) => console.log("Error가 발생하였습니다", error) );
+  // };
   
   return (
     <Fragment>
@@ -82,7 +103,7 @@ export default function Signin() {
         <div>
           <h1>회원가입 / 로그인</h1>
           <span className="icon"></span>
-          <GoogleLoginBtn ref={googleLoginBtn} onClick={GoogleApiPOST}/>
+          <GoogleLoginBtn ref={googleLoginBtn} onClick={googleSDK}/>
         </div>
       </SigninWrapper>
     </Fragment>
