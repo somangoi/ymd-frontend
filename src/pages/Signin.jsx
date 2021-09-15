@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState, useRef } from 'react';
-import GoogleLogin from 'react-google-login';
+// import GoogleLogin from 'react-google-login';
 import { useHistory } from 'react-router';
 import styled from 'styled-components'
 
@@ -115,12 +115,12 @@ const failResponseGoogle = response => {
             <span className="icon"></span>
             <GoogleLoginBtn ref={googleLoginBtn} onClick={loginWithGoogle}/>
         </div> */}
-        <GoogleLogin 
+        {/* <GoogleLogin 
           clientId='547854055873-c7esp5ssqgmg88elo551rs7fa5ur0ffa.apps.googleusercontent.com'
           onSuccess={responseGoogle}
           onFailure={failResponseGoogle}
           cookiePolicy={'single_host_origin'}
-          />
+          /> */}
       </SigninWrapper>
     </Fragment>
   )
