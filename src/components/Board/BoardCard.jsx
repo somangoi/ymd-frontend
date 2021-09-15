@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import User from '../User/User'
 
@@ -14,7 +15,7 @@ export default function BoardCard() {
       <footer>
       <span>생성날짜</span>
       <User/>
-      </footer>
+      </footer>      
     </BoardCardWraper>
   )
 }
@@ -25,7 +26,7 @@ const BoardCardWraper = styled.div`
   width: 263px;
   min-height: 120px;
   margin-bottom: 10px;
-  padding: 18px 12px 10px 19px;
+  padding: 10px;
   background-color: ${({ theme }) => theme.colorBabyBlue};
   border-radius: 5px;
 
@@ -39,6 +40,10 @@ const BoardCardWraper = styled.div`
 
   &:hover{
     cursor: pointer;
+  }
+
+  input{
+    width: 100%;
   }
 
   footer{

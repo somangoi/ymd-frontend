@@ -7,7 +7,7 @@ import { POST_GOOGLE_API } from '../config';
 export default function Signin() {
   const history = useHistory();
   const googleLoginBtn = useRef(null);
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState('');
 
   useEffect(() => {
     googleSDK();
@@ -32,7 +32,9 @@ export default function Signin() {
             const profile = googleUser.getBasicProfile();
             console.log(profile);
             console.log(`Token || ${googleUser.getAuthResponse().id_token}`);
-            setToken(googleUser.getAuthResponse().id_token);
+            // setToken(googleUser.getAuthResponse().id_token);
+            setToken('1234');
+            console.log(token);
             console.log(`ID: ${profile.getId()}`);
             console.log(`Name: ${profile.getName()}`);
             console.log(`Image URL: ${profile.getImageUrl()}`);
@@ -59,7 +61,7 @@ export default function Signin() {
   };
 
   //fetch
-  const GoogleApiPOST = (token) => {
+  const GoogleApiPOST = () => {
     fetch(`${POST_GOOGLE_API}`, {
         method: 'POST',
         headers: {
@@ -72,8 +74,7 @@ export default function Signin() {
         alert("로그인 되었습니다");
         history.push("/");
       })
-      .catch((error) => alert("Error가 발생하였습니다", error));
-    console.log('로그인!')
+      .catch((error) => console.log("Error가 발생하였습니다", error) );
   };
   
   return (
