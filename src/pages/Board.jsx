@@ -1,26 +1,31 @@
+import { useState } from 'react';
+
 import BoardList from '../components/Board/BoardList';
 import styled from 'styled-components'
 import Title from '../components/Title/Title';
 
-
 function Board() {
+  const [boardList, SetboardList] = useState([{ id: 1 }]);
+  
+
+  const addBoardList = () => {
+    SetboardList([...boardList, {id: Date.now()}])
+  } 
+
   return <BoardWrapper>
     <Title />
     <BoardSection>
-      <BoardList />
-      <BoardList />
-      <BoardList />
-      <BoardList />
-      <BoardList />
-      <AddGroupButton>+ Add another group</AddGroupButton>
+      {boardList.map(el => (
+        <BoardList key={el.id} id={el.id} />
+      ))}
+      <AddGroupButton onClick={addBoardList}>+ Add another group</AddGroupButton>
     </BoardSection>
   </BoardWrapper>;
 }
 
 const BoardWrapper = styled.div`
   margin-top: 50px;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow-y:hidden;
   padding: 20px 30px;
   background-color: ${({ theme }) => theme.colorBackground};
