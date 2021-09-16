@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { createNewBoardState } from "../../atoms/navStates";
+import { createNewBoardState, newBoardModalState } from "../../atoms/navStates";
 import { useRecoilState } from "recoil";
 
 function Balloon() {
   const [createNew, setCreateNew] = useRecoilState(createNewBoardState);
-
+  const [boardModal, setBoardModal] = useRecoilState(newBoardModalState);
   return (
     <BalloonBackground
       onClick={() => {
@@ -13,7 +13,12 @@ function Balloon() {
       }}
     >
       <BalloonContainer onClick={(e) => e.stopPropagation()}>
-        <p>
+        <p
+          onClick={() => {
+            setBoardModal(true);
+            setCreateNew(true);
+          }}
+        >
           <i className="fas fa-folder-plus"></i>
           <span>새로운 보드 만들기</span>
         </p>
