@@ -4,13 +4,19 @@ import styled from "styled-components";
 import NavBtn from "../NavBtn/NavBtn";
 import SideBar from "./SideBar";
 import Balloon from "./Balloon";
-import { sideBarState, createNewBoardState } from "../../atoms/navStates";
+import AddBoard from "../Modal/AddBoard";
+import {
+  sideBarState,
+  createNewBoardState,
+  newBoardModalState,
+} from "../../atoms/navStates";
 import { useRecoilState } from "recoil";
 
 function Nav() {
   const history = useHistory();
   const [isHidden, setIsHidden] = useRecoilState(sideBarState);
   const [createNew, setCreateNew] = useRecoilState(createNewBoardState);
+  const [boardModal, setBoardModal] = useRecoilState(newBoardModalState);
 
   return (
     <>
@@ -63,6 +69,7 @@ function Nav() {
         </Container>
         {!isHidden && <SideBar />}
         {!createNew && <Balloon />}
+        {boardModal && <AddBoard />}
       </NavContainer>
     </>
   );
