@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Background from "./Background";
 import styled from "styled-components";
 import { newBoardModalState } from "../../atoms/navStates";
 import { useRecoilState } from "recoil";
+import { MAIN_API } from "../../config";
 
 function AddBoard() {
   const [boardModal, setBoardModal] = useRecoilState(newBoardModalState);
+  const [boardTitle, setBoardTitle] = useState();
+
+  const createNewBoard = (e) => {
+    setBoardTitle(e.target.boardTitle.value);
+    console.log("boardTitle", boardTitle);
+    fetch(MAIN_API, {
+      method: "POST",
+      body: JSON.stringify({
+        board_title: boardTitle,
+      }),
+    })
+      .then((res) => console.log(res))
+      .catch((error) => console.log("error", error));
+  };
 
   const children = (
     <Container
@@ -14,10 +29,14 @@ function AddBoard() {
       }}
     >
       <AddBoardContainer onClick={(e) => e.stopPropagation()}>
-        <AddBoardBox>
-          <TitleInput placeholder="Add board title"></TitleInput>
+        <AddBoardBox onSubmit={createNewBoard}>
+          <TitleInput
+            type="text"
+            name="boardTitle"
+            placeholder="Add board title"
+          ></TitleInput>
           <ButtonBox>
-            <CreateButton>Create</CreateButton>
+            <CreateButton type="submit">Create</CreateButton>
           </ButtonBox>
         </AddBoardBox>
       </AddBoardContainer>
@@ -38,7 +57,7 @@ const AddBoardContainer = styled.div`
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
 `;
 
-const AddBoardBox = styled.div`
+const AddBoardBox = styled.form`
   padding: 30px 35px;
 `;
 

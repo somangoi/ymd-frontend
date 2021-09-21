@@ -63,7 +63,7 @@ function Nav() {
               onClick={() => {
                 history.push("/signin");
               }}
-              label={"Sign in"}
+              label="Sign in"
             />
           </BtnBundle>
         </Container>

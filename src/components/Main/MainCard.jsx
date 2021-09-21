@@ -19,8 +19,8 @@ function MainCard({ title, id }) {
         <h4>{title}</h4>
       </BoardTitle>
       <BoardMembers>
-        {memberList?.map((item) => {
-          return <BoardMember>{item.last_name}</BoardMember>;
+        {memberList?.map((item, idx) => {
+          return <BoardMember key={idx}>{item.last_name}</BoardMember>;
         })}
       </BoardMembers>
     </Card>
