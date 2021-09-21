@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 export const NavBtn = ({ label, ...props }) => {
   return (
@@ -28,14 +27,5 @@ const NavBtnContainer = styled.button`
     background-color: white;
   }
 `;
-
-NavBtn.propTypes = {
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-};
-
-NavBtn.defaultProps = {
-  onClick: undefined,
-};
 
 export default NavBtn;
